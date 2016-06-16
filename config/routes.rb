@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :likes
   end
 
+  post '/posts/:post_id/likes(.:format)' => 'likes#create', as: :post_likes_new
+
   get 'user_posts/:user_id' => 'posts#user', as: :user_posts
 
   # The priority is based upon order of creation: first created -> highest priority.
